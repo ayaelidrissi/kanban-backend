@@ -5,7 +5,12 @@ const cors = require('cors');
 const Task = require('./models/Task');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:5173", 
+    "https://stunning-nasturtium-0ed39e.netlify.app" 
+  ]
+}));
 app.use(express.json());
 
 // MongoDB Connection
